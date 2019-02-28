@@ -1,20 +1,202 @@
-<!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate">
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<style>
+.area{
+  border: 5px solid red;
+  width: 100px;
+  height: 100px;
+  top: 120px;
+  left: 10px;
+}
+.list {
+  border: 1px solid red;
+  position: relative;
+  width: 1000px;
+  height: auto;
+}
+.relative {
+  border: 1px solid red;
+  position: relative;
+  width: 1000px;
+  height: 1000px;
+  background-image: url("4d08308d1dcc91982636e7bbcb80aa98278cd623.png");
+  background-repeat: no-repeat;
+}
+
+.absolute {
+  border: 1px solid #FFF;
+  color:rgba(255,0,0,0.9);
+  position: absolute;
+  background-color: rgba(255,255,0,0.9);
+  opacity: 0.9; 
+
+}
+.absolute2 {
+  position: absolute;
+
+}
+#absolute_y{
+  border: 1px solid rgb(0,255,255); 
+  color: rgb(0,255,255);
+  
+  left:0px; 
+  top:0px;
+  width: 100%;
+  height: 100px;
+
+}
+#absolute_x{
+  border: 1px solid rgb(255,0,255); 
+  color: rgb(255,0,255);
+
+  left:0px; 
+  top:0px;
+  width: 100px;
+  height: 100%;
+
+}
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(e){
+	console.log( "DOMContentLoaded" );
+	//var bb=document.querySelector("body");
+var str=`
+DOMContentLoaded
+`;
+	//bb.insertAdjacentHTML('beforeend', '<h1>'+str+'</h1>');
+	//document.title=str;
+	//console.log(bb);
+});
+
+$(function(){});
+$(()=>{
+	console.log('jq');
+	//
+	$.gg=[];
+	$.gg.cc=0;
+	$.gg.time=Date.now();
+	//
+	poi();
+});
+
+function poi(){
+	var aa=$('div.absolute');
+	//console.log(aa );
+	var str='';
+	$('div.absolute').each(function(index,element){
+		str=str+'<a href="#'+index+'" class="checklist">'+element.innerText+'</a>, ';
+		//console.log(element.innerText );
+	});
+	$('div.list').html(str);
+	
+    $('a.checklist').on('click',function(e){
+		var qq1=e.target.innerText;
+		//console.log( qq1 );
+		var qq2=$('div.absolute:contains("'+qq1+'")');
+		//console.log( qq2 );
+		//console.log( qq2.prop('offsetLeft') );
+		//console.log( qq2.prop('offsetTop') );
+		$('div#absolute_x').css({
+			'width': qq2.prop('offsetLeft') ,
+		});
+		$('div#absolute_y').css({
+			'height': qq2.prop('offsetTop') ,
+		});
+
+		
+	});
+
+	$('map>area').css({
+	});
+}//poi
+
+</script>
+
+
+
+</head>
+
 <body>
+
 <h1>
-ring of elysium - Europa Island
+Ring of Elysium - Europa Island
 </h1>
 <h2>
 無限法則 - 海島模式
 </h2>
+<h3>
+遊戲地圖
+</h3>
+<div class='list'>
+aaa
+</div>
+<div class='relative'>
+<div class='absolute2' id='absolute_x' style=''>absolute_x</div>
+<div class='absolute2' id='absolute_y' style=''>_<br/>absolute_y</div>
 
-<img src="4d08308d1dcc91982636e7bbcb80aa98278cd623.png" width="927" height="965" alt="地圖" usemap="#map">
 
-<map name="planetmap">
-  <area shape="rect" coords="0,0,82,126" alt="連結1" href="#sun.htm">
-  <area shape="circle" coords="90,58,3" alt="連結2" href="#mercur.htm">
-  <area shape="circle" coords="124,58,8" alt="連結3" href="#venus.htm">
-</map>
+
+
+<div class='absolute' style='left:150px; top:150px;'>海灣工業區</div>
+<div class='absolute' style='left:320px; top:120px;'>米諾斯島</div>
+<div class='absolute' style='left:450px; top:180px;'>白岸鎮</div>
+<div class='absolute' style='left:580px; top:100px;'>造船廠</div>
+<div class='absolute' style='left:700px; top:100px;'>潮汐鎮</div>
+
+<div class='absolute' style='left:650px; top:180px;'>卡西尼農場</div>
+<div class='absolute' style='left:800px; top:250px;'>天使鎮</div>
+<div class='absolute' style='left:780px; top:220px;'>聖加百列大教堂</div>
+
+<div class='absolute' style='left:280px; top:350px;'>海洋公園</div>
+<div class='absolute' style='left:420px; top:350px;'>拇指灣</div>
+<div class='absolute' style='left:600px; top:350px;'>圖靈市</div>
+<div class='absolute' style='left:850px; top:350px;'>海鷗鎮</div>
+
+<div class='absolute' style='left:100px; top:400px;'>西頓堡遺跡</div>
+<div class='absolute' style='left:300px; top:480px;'>鯨魚島</div>
+<div class='absolute' style='left:550px; top:480px;'>阿爾托市</div>
+<div class='absolute' style='left:800px; top:480px;'>海濱市集</div>
+
+<div class='absolute' style='left:300px; top:600px;'>費舍市</div>
+<div class='absolute' style='left:520px; top:620px;'>馬里烏斯天文臺</div>
+<div class='absolute' style='left:700px; top:620px;'>薩根鎮</div>
+
+
+<div class='absolute' style='left:100px; top:700px;'>颶風村</div>
+<div class='absolute' style='left:420px; top:720px;'>韋恩鎮</div>
+<div class='absolute' style='left:580px; top:750px;'>射電望遠鏡</div>
+<div class='absolute' style='left:780px; top:780px;'>渡假村</div>
+
+<div class='absolute' style='left:50px;  top:850px;'>薩爾珀冬島</div>
+<div class='absolute' style='left:200px; top:850px;'>海灣城</div>
+<div class='absolute' style='left:350px; top:800px;'>橋鎮</div>
+<div class='absolute' style='left:500px; top:850px;'>伽利略港</div>
+
+
+
+
+
+<div class='absolute' style='top: 100px;left: 100px;'>100</div>
+<div class='absolute' style='top: 200px;left: 200px;'>200</div>
+<div class='absolute' style='top: 300px;left: 300px;'>300</div>
+<div class='absolute' style='top: 400px;left: 400px;'>400</div>
+<div class='absolute' style='top: 500px;left: 500px;'>500</div>
+<div class='absolute' style='top: 600px;left: 600px;'>600</div>
+<div class='absolute' style='top: 700px;left: 700px;'>700</div>
+<div class='absolute' style='top: 800px;left: 800px;'>800</div>
+<div class='absolute' style='top: 900px;left: 900px;'>900</div>
+
+</div>
+
 
 </body>
 </html>
